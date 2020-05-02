@@ -2,4 +2,4 @@
 
 require_relative "../lib/nfl_crime"
 
-CLI.new.start
+Cli.new.start
