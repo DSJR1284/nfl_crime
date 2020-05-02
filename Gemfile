@@ -1,5 +1,9 @@
 source "https://rubygems.org"
 
+require "pry"
+require "httparty"
+require "json"
+require "byebug"
 # Specify your gem's dependencies in nfl_crime.gemspec
 gemspec
 
