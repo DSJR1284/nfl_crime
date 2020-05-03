@@ -1,5 +1,5 @@
 
-class Cli 
+class NflCrime::Cli 
     
     def start
         puts "hello"        

@@ -1,6 +1,6 @@
 require "pry"
 
-class API
+class NflCrime::Api 
 
         BASE_URL = "http://nflarrest.com/api/v1/"
     
