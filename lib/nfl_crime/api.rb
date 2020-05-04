@@ -2,15 +2,13 @@ require "pry"
 
 class NflCrime::Api 
 
-        BASE_URL = "http://nflarrest.com/api/v1/"
+        BASE_URL = "https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search"
     
-    def self.get_crime
-        url = BASE_URL + "crime"
+    def self.get_covid_data
+        url = BASE_URL
         res = HTTParty.get(url)
-#       API get_crime_from_api(res)  
-#         binding.pry      
+        NflCrime::Crime.get_covid_data_api(res["data"]["rows"][1...10])               
     end   
    
 end 
 
-# Gamer::API.get_crime
