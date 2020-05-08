@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/nfl_crime"
+require_relative "../lib/covid_country.rb"
 
-NflCrime::Cli.new.start
+CovidCountry::Cli.new.start
