@@ -22,6 +22,10 @@ class CovidCountry::Country
         @total_cases = total_cases
         save
     end     
+
+    def to_s 
+        country.capitalize
+    end 
  
     def save
         @@all << self

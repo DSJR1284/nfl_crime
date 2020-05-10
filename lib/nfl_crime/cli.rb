@@ -15,14 +15,14 @@ class CovidCountry::Cli
 
     def welcome
       puts "**********************"
-      puts "Welcome to Covid C&C"
+      puts "Welcome to Covid C & C"
       puts "**********************"
     end 
 
     def menu 
       get_data
       display_countries
-      puts "Please Choose A Country to See Covid-19 Cases"
+      puts "Choose a Country by number to See Covid-19 Cases or type 'exit' to exit the program"
     end 
 
      def get_data
@@ -33,12 +33,13 @@ class CovidCountry::Cli
         CovidCountry::Country.all.each_with_index do |c, i|
             puts "#{i+1}. #{c.country}"
         end
-     end
+     end  
 
      def display_single_country(i)
       country = CovidCountry::Country.all[i-1]
-      puts "FINISH YOUR CODE HERE"
-      puts "Click enter to continue"
+      puts country.country
+      puts country.total_cases
+      puts "Press any key to continue"
       gets 
      end
 
@@ -49,9 +50,9 @@ class CovidCountry::Cli
         return input if input =="exit"
         if !valid?(input)
          puts "No Cases To Report"
-        return "invalid"
+          return "invalid"
         end 
-        return input.to_i 
+        return input.to_i
     end 
 
     def valid?(i)
