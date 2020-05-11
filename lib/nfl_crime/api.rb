@@ -1,5 +1,12 @@
 require "pry"
 
+=begin
+API class goes across the internet 
+get my information.
+Parse my information with httparty gem 
+iterated through my inforamtion.     
+=end
+
 class CovidCountry::Api 
 
         BASE_URL = "https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search"

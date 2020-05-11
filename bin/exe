@@ -3,3 +3,10 @@
 require_relative "../lib/covid_country.rb"
 
 CovidCountry::Cli.new.start
+
+=begin
+exe file the runs my ruby application
+Shabang line for my ruby enviorment
+req_rel for my path to my files 
+My CLI controller with my .new and my start method (wires up CLI)     
+=end
