@@ -35,7 +35,7 @@ class CovidCountry::Cli
 
   def display_countries #Display countries in an order list
       CovidCountry::Country.all.each_with_index do |c, i|
-      puts "#{i+1}. #{c.country}"            
+      puts "#{i+1}. #{c.country}"          
       end
   end  
 
@@ -51,7 +51,7 @@ class CovidCountry::Cli
       input = gets.strip.downcase
       return input if input =="exit"
       if !valid?(input)
-      puts "No Cases To Report"
+      puts "Invalid Input"
       sleep(2)
       puts "\n"
       puts "Please choose another country from our list or type 'exit' to exit the program"
