@@ -67,7 +67,7 @@ class CovidCountry::Cli
   end 
 
   def finish
-      puts "Thank You For Checking Out Covid C & C and remeber be safe"
+      puts "Thank You For Checking Out Covid C & C and Remember Be Safe!"
   end  
 end   
 
