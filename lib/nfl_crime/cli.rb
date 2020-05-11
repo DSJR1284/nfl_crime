@@ -9,8 +9,11 @@ class CovidCountry::Cli
           break if input == "exit"
           next if input == "invalid" 
           display_single_country(input)
-          # Tell the user to chooose antoher country 
-        end   
+          next if display_countries
+          next puts "Please choose a country from our list or type 'exit' to exit the program"                 
+                
+        end  
+        finish
     end
 
     def welcome
@@ -31,7 +34,7 @@ class CovidCountry::Cli
 
      def display_countries
         CovidCountry::Country.all.each_with_index do |c, i|
-            puts "#{i+1}. #{c.country}"
+          puts "#{i+1}. #{c.country}"            
         end
      end  
 
@@ -39,28 +42,29 @@ class CovidCountry::Cli
       country = CovidCountry::Country.all[i-1]
       puts country.country
       puts country.total_cases
-      puts "Press any key to continue"
-      gets 
-     end
-
-   
+      puts "Press Enter to continue"
+      gets.strip 
+     end   
 
     def get_covid_country
         input = gets.strip.downcase
-        return input if input =="exit"
-        if !valid?(input)
-         puts "No Cases To Report"
+          return input if input =="exit"
+          if !valid?(input)
+          puts "No Cases To Report"
+          sleep(2)
+          puts "\n\n"
+          display_countries
           return "invalid"
         end 
         return input.to_i
     end 
 
     def valid?(i)
-        i.to_i.between?(1,CovidCountry::Country.all.length)
-    end 
+      i.to_i.between?(1,CovidCountry::Country.all.length)
+  end 
 
     def finish
-      puts "Thank You For Checking Out Covid C&C and remeber be safe"
+      puts "Thank You For Checking Out Covid C & C and remeber be safe"
     end 
   
 end   
