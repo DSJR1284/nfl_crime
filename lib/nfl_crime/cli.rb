@@ -1,7 +1,7 @@
 
 class CovidCountry::Cli 
     
-  def start #controller run through of the CLI project
+  def start #controller run through of the CLI project 
       welcome  
       menu 
       loop do
@@ -72,4 +72,3 @@ class CovidCountry::Cli
       puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   end  
 end   
-
